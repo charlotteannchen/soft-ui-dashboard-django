@@ -160,3 +160,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Add the path to save uploaded files in the static folder
+UPLOAD_TO_STATIC_DIR = os.path.join(BASE_DIR, 'static/uploads')
+os.makedirs(UPLOAD_TO_STATIC_DIR, exist_ok=True)
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
