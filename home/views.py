@@ -1,32 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-# Create your views here.
-
-def index(request):
-
-    # Page from the theme 
-    return render(request, 'pages/index.html')
-
-
-# from django.http import JsonResponse
-# from django.core.files.storage import FileSystemStorage
-
-
-# def upload(request):
-#     if request.method == 'POST' and request.FILES.get('image'):
-#         image = request.FILES['image']
-#         fs = FileSystemStorage()
-#         filename = fs.save(image.name, image)
-#         uploaded_file_url = fs.url(filename)
-#         return JsonResponse({'uploaded_file_url': uploaded_file_url})
-#     return render(request, 'pages/index.html')
-
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
+
 import os
 import shutil
+
+def index(request):
+    return render(request, 'pages/index.html')
 
 def upload(request):
     if request.method == 'POST' and request.FILES.get('image'):
