@@ -43,7 +43,8 @@
                       {% csrf_token %}
                       <div class="mb-3">
                         <label for="inputText" class="form-label">Enter your message</label>
-                        <input class="form-control" type="text" id="inputText" name="message"  style="height: 220px;">
+                        <textarea class="form-control" id="inputText" name="message" rows="10" style="height: 220px;"></textarea>
+                        {% comment %} <input class="form-control" type="text" id="inputText" name="message"  style="height: 220px;"> {% endcomment %}
                       </div>
                       <button type="submit" class="btn btn-primary">Upload</button>
                   </form>
