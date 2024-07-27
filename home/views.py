@@ -26,3 +26,9 @@ def upload(request):
         static_file_url = f"{settings.STATIC_URL}uploads/{filename}"
         return JsonResponse({'uploaded_file_url': static_file_url})
     return JsonResponse({'error': 'Invalid request'}, status=400)
+
+def askWithImage(request):
+    return render(request, 'pages/askWithImage.html')
+
+def questions(request):
+    return render(request, 'pages/questions.html')
